@@ -1,25 +1,39 @@
 package config
 
-import "os"
+import (
+	"io/ioutil"
+	"os"
+	"strconv"
+)
 
 type Reloader interface {
 	Reload() error
 }
 
 type ConfigReloader struct {
-	pid    int
-	signal os.Signal
+	pidFile string
+	signal  os.Signal
 }
 
-func NewConfigReloader(pid int, signal os.Signal) *ConfigReloader {
+func NewConfigReloader(pidFile string, signal os.Signal) *ConfigReloader {
 	return &ConfigReloader{
-		pid:    pid,
-		signal: signal,
+		pidFile: pidFile,
+		signal:  signal,
 	}
 }
 
 func (c *ConfigReloader) Reload() error {
-	process, err := os.FindProcess(c.pid)
+	pidBytes, err := ioutil.ReadFile(c.pidFile)
+	if err != nil {
+		return err
+	}
+
+	pid, err := strconv.Atoi(string(pidBytes))
+	if err != nil {
+		return err
+	}
+
+	process, err := os.FindProcess(pid)
 	if err != nil {
 		return err
 	}

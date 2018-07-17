@@ -1,0 +1,19 @@
+language: go
+
+before_install:
+  - go get github.com/mitchellh/gox
+
+script:
+  go get ./...
+  go test ./...
+  gox -os="linux" -arch="amd64 386"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: gD+75AzOl4K/pEtmd0Aiq2qaDgpHa/o8/rckHJbTyt9ij25BpMr6frDnu2+U04lpmi10J7ppTy9lj3WJWnKd73V2ff0rwCzQ65A3d67FhTHWiWr2ouNCY6gOSLLEuBhlPN+yIEPQM7iHiA6ATayIobKiYYCI2nQQzQZgS1SIXlioNt40kFgSRYsYovS5+oNxSMjTC/utqSVsWawWYtQzfybY3hnCGuh+t4Vrc6AyAplFsnMdbGxLayiPd3PPaMwBf+YhzaBNu+Cvcmma0kcgyidqaYoLKF1rdTNG3AlUl/wloAKBUeGFd0OA5CisK57x3SrbtRpXk3ELPDakmfccxqQL2QkI5TGIZPLb3TfEPcRWzCWdov5qwnwoWTGIzepHx0M3cLj2ZkE6nhNKNCiqUe8BmsETMwyH4d5O+4WugZedSRuqZleJ7HqdRrxGFkfd/CAbSVE5/uAz01ubW5haJ2eORsIfR6TMN1YdhDcfmf6tatf7vhFpEf1MH33fOO6eBcqxLiu4m+r7T4kcbinP3+Eby8KH4p0Sn4lM510Qlzf7LJr9JJwC6CYuTypPLgZpxO8HsY0gx/Hg8RfC/6YF2fGpbQGbCBNhBcjDNWk1XjBr8jqbVb5cicFT6iQ/YIvQNQRoU4kMSgJaOsmqqH3fq58PwsTwMGvrlBGbWQJJNQM=
+  file:
+    - haproxy-config-agent_linux_amd64
+    - haproxy-config-agent_linux_386
+  on:
+    repo: Scalingo/haproxy-config-agent

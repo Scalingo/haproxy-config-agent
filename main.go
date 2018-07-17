@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"net/http"
+	"os"
+	"os/signal"
 	"syscall"
 
 	"github.com/Scalingo/go-internal-tools/logger"
@@ -21,17 +23,22 @@ func main() {
 	log := logger.Default()
 	log.SetLevel(logrus.InfoLevel)
 	log.WithFields(logrus.Fields{
-		"pid":  env.Config.TargetPID,
+		"pid":  env.Config.PID,
 		"path": env.Config.Path,
 	}).Info("Config loaded")
 
 	ctx := logger.ToCtx(context.Background(), log)
 	configManager := web.ConfigManager{
-		Reloader: config.NewConfigReloader(env.Config.TargetPID, syscall.SIGHUP),
+		Reloader: config.NewConfigReloader(env.Config.PID, syscall.SIGHUP),
 		Writer:   config.NewConfigWriter(env.Config.Path),
 	}
 
 	router := web.NewRouter(ctx, configManager)
 	log.Infof("Listening on :%s", env.Config.Port)
-	http.ListenAndServe(":"+env.Config.Port, router)
+	go http.ListenAndServe(":"+env.Config.Port, router)
+
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	<-sigs
+	log.Info("Shutting down!")
 }
