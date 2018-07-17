@@ -16,4 +16,5 @@ deploy:
     - haproxy-config-agent_linux_amd64
     - haproxy-config-agent_linux_386
   on:
+    tags: true
     repo: Scalingo/haproxy-config-agent
