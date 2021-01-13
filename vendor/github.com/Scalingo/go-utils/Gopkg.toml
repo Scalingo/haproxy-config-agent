@@ -23,48 +23,20 @@
 
 [[constraint]]
   name = "github.com/Scalingo/go-etcd-cron"
-  version = "~1"
-
-[[constraint]]
-  name = "github.com/Scalingo/logrus-rollbar"
-  version = "1.2.1"
+  version = "~1.1"
 
 [[constraint]]
   name = "github.com/coreos/etcd"
   version = "3.3.1"
 
 [[constraint]]
-  name = "github.com/golang/mock"
-  version = "1.0.0"
-
-[[constraint]]
   name = "github.com/nsqio/go-nsq"
   version = "1.0.7"
 
 [[constraint]]
-  name = "github.com/pkg/errors"
-  version = "0.8.0"
-
-[[constraint]]
-  name = "github.com/satori/go.uuid"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/sirupsen/logrus"
-  version = "1.0.4"
-
-[[constraint]]
-  name = "github.com/stretchr/testify"
-  version = "1.2.1"
-
-[[constraint]]
-  name = "github.com/stvp/rollbar"
-  version = "0.5.1"
-
-[[constraint]]
-  branch = "v1"
-  name = "gopkg.in/errgo.v1"
-
-[[constraint]]
   branch = "v2"
   name = "gopkg.in/mgo.v2"
+
+[[constraint]]
+  name = "github.com/ncw/swift"
+  version = "1.x"

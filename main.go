@@ -7,11 +7,12 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/Scalingo/go-internal-tools/logger"
+	"github.com/sirupsen/logrus"
+
+	"github.com/Scalingo/go-utils/logger"
 	"github.com/Scalingo/haproxy-config-agent/config"
 	"github.com/Scalingo/haproxy-config-agent/env"
 	"github.com/Scalingo/haproxy-config-agent/web"
-	"github.com/sirupsen/logrus"
 )
 
 func main() {
