@@ -1,0 +1,38 @@
+# github.com/Scalingo/go-handlers v1.2.4
+## explicit
+github.com/Scalingo/go-handlers
+# github.com/Scalingo/go-utils v7.1.0+incompatible
+## explicit
+github.com/Scalingo/go-utils/errors
+github.com/Scalingo/go-utils/logger
+# github.com/codegangsta/negroni v0.3.0
+## explicit
+github.com/codegangsta/negroni
+# github.com/gorilla/context v1.1.1
+## explicit
+github.com/gorilla/context
+# github.com/gorilla/mux v1.6.2
+## explicit
+github.com/gorilla/mux
+# github.com/kelseyhightower/envconfig v1.3.0
+## explicit
+github.com/kelseyhightower/envconfig
+# github.com/pkg/errors v0.8.0
+## explicit
+github.com/pkg/errors
+# github.com/satori/go.uuid v1.2.1-0.20180103174451-36e9d2ebbde5
+## explicit
+github.com/satori/go.uuid
+# github.com/sirupsen/logrus v1.0.5
+## explicit
+github.com/sirupsen/logrus
+# golang.org/x/crypto v0.0.0-20180621125126-a49355c7e3f8
+## explicit
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20180709060233-1b2967e3c290
+## explicit
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# gopkg.in/errgo.v1 v1.0.0-20180502123906-c17903c6b19d
+## explicit
+gopkg.in/errgo.v1
