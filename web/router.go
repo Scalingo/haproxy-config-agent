@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/Scalingo/go-handlers"
-	"github.com/Scalingo/go-internal-tools/logger"
+	"github.com/Scalingo/go-utils/logger"
 	"github.com/Scalingo/haproxy-config-agent/env"
 )
 
