@@ -4,6 +4,12 @@ The haproxy-config-agent executable is embedded in our databases base image and 
 
 ### Release a New Version
 
+You first need to build the executable:
+
+```shell
+docker-compose run haproxy-config-agent go build -o haproxy-config-agent_linux_amd64
+```
+
 Bump new version number in:
 
 - `CHANGELOG.md`
@@ -17,7 +23,7 @@ git commit -m "Bump v1.0"
 git tag v1.0
 git push origin master
 git push --tags
-hub release create v1.0
+hub release create --attach haproxy-config-agent_linux_amd64 v1.0
 ```
 
 The title of the release should be the version number and the text of the release is the same as the changelog.
