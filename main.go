@@ -22,7 +22,6 @@ func main() {
 	}
 
 	log := logger.Default()
-	log.SetLevel(logrus.InfoLevel)
 	log.WithFields(logrus.Fields{
 		"pid":  env.Config.PID,
 		"path": env.Config.Path,

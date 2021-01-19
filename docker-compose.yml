@@ -1,0 +1,7 @@
+version: '3'
+services:
+  haproxy-config-agent:
+    image: golang:1.15
+    working_dir: /go/src/github.com/Scalingo/haproxy-config-agent
+    volumes:
+      - ./:/go/src/github.com/Scalingo/haproxy-config-agent
