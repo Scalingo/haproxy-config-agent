@@ -13,12 +13,9 @@ github.com/gorilla/mux
 # github.com/kelseyhightower/envconfig v1.4.0
 ## explicit
 github.com/kelseyhightower/envconfig
-# github.com/magefile/mage v1.10.0
-github.com/magefile/mage/mg
-github.com/magefile/mage/sh
 # github.com/pkg/errors v0.9.1
 github.com/pkg/errors
-# github.com/sirupsen/logrus v1.8.0
+# github.com/sirupsen/logrus v1.8.1
 ## explicit
 github.com/sirupsen/logrus
 # github.com/urfave/negroni v1.0.0
